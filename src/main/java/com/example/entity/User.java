@@ -15,6 +15,8 @@ public class User {
 	@Id
 	@SequenceGenerator(name = "USER_ID_GENERATOR", sequenceName = "USER_ID_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_ID_GENERATOR")
+	@Column(name = "ROLE")
+	private String role;
 	@Column(name = "ID")
 	private Integer id;
 
@@ -26,6 +28,14 @@ public class User {
 
 	@Column(name = "PASSWORD")
 	private String password;
+
+	public String getRole() {
+		return this.role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public Integer getId() {
 		return this.id;
